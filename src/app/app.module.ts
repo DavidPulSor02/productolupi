@@ -7,6 +7,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuotationComponent } from './pages/quotation/quotation.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
+import { CatalogoAutosComponent } from './pages/catalogo-autos/catalogo-autos.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { AboutComponent } from './pages/about/about.component';
     HomeComponent,
     QuotationComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    CatalogoAutosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
