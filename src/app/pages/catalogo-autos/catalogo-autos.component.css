@@ -32,6 +32,7 @@ body {
   .auto-card {
     width: 250px;
     padding: 15px;
+
     border: 2px solid #FFD700; /* Verde neón */
     border-radius: 10px;
     text-align: center;
@@ -70,7 +71,7 @@ body {
   
   .btn-ver:hover {
     background-color: #FFD700;
-  }
+   }
   
   /* Botón "Agregar Producto" */
   .btn-agregar {
