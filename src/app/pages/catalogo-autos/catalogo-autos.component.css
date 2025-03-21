@@ -1,0 +1,84 @@
+/* Fondo negro */
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenedor del catálogo */
+  .catalogo-container {
+    margin-top: 80px; /* Ajusta según la altura del navbar */
+    padding: 20px;
+  }
+  
+  /* Diseño del menú desplegable */
+  select {
+    background-color: rgb(251, 255, 28);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  /* Diseño del catálogo */
+  .catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Diseño de las tarjetas */
+  .auto-card {
+    width: 250px;
+    padding: 15px;
+    border: 2px solid #FFD700; /* Verde neón */
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #FFD700;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .auto-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Imagen dentro de la tarjeta */
+  .auto-card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Botones estilizados */
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Botón "Ver más" */
+  .btn-ver {
+    background-color: #FFD700;
+    color: black;
+  }
+  
+  .btn-ver:hover {
+    background-color: #FFD700;
+  }
+  
+  /* Botón "Agregar Producto" */
+  .btn-agregar {
+    background-color: #ff00ff;
+    color: white;
+  }
+  
+  .btn-agregar:hover {
+    background-color: #800080;
+  }
+  
