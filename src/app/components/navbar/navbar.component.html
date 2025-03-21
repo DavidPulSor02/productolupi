@@ -1,8 +1,15 @@
-<nav>
-    <ul>
-        <li><a routerLink="/home">Inicio</a></li>
-        <li><a routerLink="/quotation">Cotización</a></li>
-        <li><a routerLink="/contact">Contáctanos</a></li>
-        <li><a routerLink="/about">Sobre Nosotros</a></li>
+<nav class="navbar">
+    <div class="logo">
+        <a routerLink="/home">SafeDrive</a>
+    </div>
+    <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
+        <li><a routerLink="/quotation" routerLinkActive="active">Cotización</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contacto</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">Sobre Nosotros</a></li>
     </ul>
+    <div class="user-icons">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-bars menu-toggle"></i>
+    </div>
 </nav>

@@ -6,11 +6,14 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'quotation', component: QuotationComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+
+  // Manejo de página no encontrada (404)
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

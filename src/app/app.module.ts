@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -12,6 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     HomeComponent,
     QuotationComponent,
     ContactComponent,
@@ -19,12 +19,9 @@ import { AboutComponent } from './pages/about/about.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NavbarComponent
+    AppRoutingModule
   ],
-  providers: [
-    provideClientHydration(withEventReplay())
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

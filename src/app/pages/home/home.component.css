@@ -1,8 +1,248 @@
-h1 {
-    color: #333;
+/* ============================== */
+/* HERO SECTION (SECCIÓN PRINCIPAL) */
+/* ============================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://th.bing.com/th/id/R.5ff1241b0040d30de7593db11e97641e?rik=wWDMy8s%2bc2Efmw&pid=ImgRaw&r=0') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-img {
+/* Capa oscura para mejorar la legibilidad del texto */
+.overlay {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido de la sección */
+.content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.content h1 span {
+    color: #FFD700;
+    /* Color dorado para resaltar SafeDrive */
+}
+
+.content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+/* Botón de Cotización */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: white;
+    background: #FFD700;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* ============================== */
+/* SECCIÓN DE VENTA DE AUTOS */
+/* ============================== */
+.sell-car {
+    background: #111;
+    color: white;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor flexible con dos columnas */
+.sell-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+}
+
+/* Columna de texto */
+.sell-text {
+    flex: 1;
+}
+
+.sell-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sell-text p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sell-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sell-text li {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Iconos de lista */
+.sell-text li::before {
+    content: "✔";
+    /* Agrega el check verde */
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Botón de llamada a la acción */
+.sell-text .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: white;
+    background: #FFD700;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.sell-text .btn:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Columna de imagen */
+.sell-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sell-image img {
+    width: 100%;
+    max-width: 500px;
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sell-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================== */
+/* RESPONSIVE DESIGN (MÓVIL) */
+/* ============================== */
+@media (max-width: 768px) {
+    .sell-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sell-text h2 {
+        font-size: 2rem;
+    }
+
+    .sell-text p {
+        font-size: 1.1rem;
+    }
+
+    .sell-image img {
+        max-width: 80%;
+    }
+}
+/* Footer */
+.footer {
+    background: black;
+    color: white;
+    padding: 40px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-logo h2 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFD700;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #FFD700;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }

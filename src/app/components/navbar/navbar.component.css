@@ -1,24 +1,51 @@
-nav {
-    background: #222;
-    padding: 15px;
+/* Navbar General */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-ul {
+.logo a {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
-li {
+.nav-links li {
     display: inline;
 }
 
-a {
+.nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s;
 }
 
-a:hover {
-    color: yellow;
+.nav-links a:hover,
+.nav-links .active {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+}
+
+.user-icons {
+    display: flex;
+    gap: 15px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
