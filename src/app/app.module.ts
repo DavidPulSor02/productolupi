@@ -11,6 +11,7 @@ import { CatalogoAutosComponent } from './pages/catalogo-autos/catalogo-autos.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DetalleAutoComponent } from './pages/detalle-auto/detalle-auto.component';
+import { RegisterPageComponent } from './auth/pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetalleAutoComponent } from './pages/detalle-auto/detalle-auto.componen
     ContactComponent,
     AboutComponent,
     CatalogoAutosComponent,
-    DetalleAutoComponent
+    DetalleAutoComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
