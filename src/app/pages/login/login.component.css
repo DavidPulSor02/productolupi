@@ -1,0 +1,102 @@
+/* Contenedor principal del login */
+.login-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 120px auto;
+    padding: 35px;
+    background-color: #202020;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título del login */
+.login-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFD700;
+}
+
+/* Inputs con estilo moderno */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #FFD700;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #FFD700;
+    border-radius: 6px;
+    background: #181818;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al enfocar el input */
+input:focus {
+    border-color: #E6C200;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Botón de inicio de sesión con efecto */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #FFD700, #E6C200);
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 12px rgba(255, 215, 0, 0.6);
+}
+
+/* Efecto hover del botón */
+button:hover {
+    background: linear-gradient(45deg, #E6C200, #C9A600);
+    box-shadow: 0 7px 16px rgba(255, 215, 0, 1);
+    transform: translateY(-2px);
+}
+
+/* Estilo del mensaje de error */
+.error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 12px;
+}
+
+/* Adaptabilidad en pantallas grandes */
+@media (min-width: 1024px) {
+    .login-container {
+        max-width: 600px;
+        padding: 40px;
+    }
+}

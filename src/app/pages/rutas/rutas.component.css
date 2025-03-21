@@ -1,0 +1,68 @@
+/* Contenedor de rutas en el sidebar */
+.rutas-container {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título */
+.rutas-container h2 {
+    font-size: 18px;
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la tabla */
+.rutas-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados */
+.rutas-table thead {
+    background: #004080;
+    color: white;
+}
+
+.rutas-table th,
+.rutas-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Alternar colores en filas */
+.rutas-table tbody tr:nth-child(even) {
+    background: #f1f5ff;
+}
+
+.rutas-table tbody tr:hover {
+    background: #d6e4ff;
+    transition: 0.3s;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .rutas-container {
+        position: static;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .rutas-table th,
+    .rutas-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

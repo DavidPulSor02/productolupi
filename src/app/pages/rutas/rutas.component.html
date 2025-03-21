@@ -1,0 +1,13 @@
+<h2>Rutas Recientes</h2>
+<table>
+    <tr>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Fecha</th>
+    </tr>
+    <tr *ngFor="let ruta of rutas">
+        <td>{{ ruta.origen }}</td>
+        <td>{{ ruta.destino }}</td>
+        <td>{{ ruta.fecha }}</td>
+    </tr>
+</table>

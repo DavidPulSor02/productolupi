@@ -1,0 +1,22 @@
+<div class="car-panel">
+    <h2>Mi Vehículo</h2>
+    <div class="car-card">
+        <img [src]="car.image" alt="Imagen del auto">
+        <div class="car-details">
+            <h3>{{ car.brand }} {{ car.model }}</h3>
+            <p><strong>Año:</strong> {{ car.year }}</p>
+            <p><strong>Color:</strong> {{ car.color }}</p>
+            <p><strong>Placas:</strong> {{ car.licensePlate }}</p>
+            <p><strong>VIN:</strong> {{ car.vin }}</p>
+        </div>
+    </div>
+
+    <h3>Propietario</h3>
+    <div class="user-details">
+        <p><strong>Nombre:</strong> {{ user.name }}</p>
+        <p><strong>Correo:</strong> {{ user.email }}</p>
+        <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+    </div>
+
+    <button class="btn" (click)="editCar()">Editar Vehículo</button>
+</div>

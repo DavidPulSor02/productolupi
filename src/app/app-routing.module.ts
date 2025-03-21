@@ -3,22 +3,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { QuotationComponent } from './pages/quotation/quotation.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { AboutComponent } from './pages/about/about.component';
-import { CatalogoAutosComponent } from './pages/catalogo-autos/catalogo-autos.component';
-import { DetalleAutoComponent } from './pages/detalle-auto/detalle-auto.component';
+import { LoginComponent } from './pages/login/login.component'; // Asegúrate de importar el componente correcto
+import { PanelComponent } from './pages/panel/panel.component';
+import { RutasComponent } from './pages/rutas/rutas.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AutosComponent } from './pages/autos/autos.component';
+import { ConfiguracionComponent } from './pages/configuracion/configuracion.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirección a home por defecto
   { path: 'home', component: HomeComponent },
   { path: 'quotation', component: QuotationComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'catalogo-autos', component: CatalogoAutosComponent},
-  { path: 'detalle-auto/:id', component: DetalleAutoComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'panel', component: PanelComponent },
+  { path: 'rutas', component: RutasComponent },
+  { path: 'inicio', component: DashboardComponent },
+  { path: 'autos', component: AutosComponent },
+  { path: 'configuracion', component: ConfiguracionComponent },
+  
 
-  // Manejo de página no encontrada (404)
-  { path: '**', redirectTo: 'home' }
-];
+
+  
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
