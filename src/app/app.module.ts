@@ -8,7 +8,9 @@ import { QuotationComponent } from './pages/quotation/quotation.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CatalogoAutosComponent } from './pages/catalogo-autos/catalogo-autos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { DetalleAutoComponent } from './pages/detalle-auto/detalle-auto.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { FormsModule } from '@angular/forms';
     QuotationComponent,
     ContactComponent,
     AboutComponent,
-    CatalogoAutosComponent
+    CatalogoAutosComponent,
+    DetalleAutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

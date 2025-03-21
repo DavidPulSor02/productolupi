@@ -1,32 +1,27 @@
 <div class="catalogo-container">
-    <h2>Catálogo de Autos</h2>
-    
-  
-<!-- Barra de búsqueda -->
-<label for="busqueda">Buscar auto:</label>
-<input type="text" id="busqueda" [(ngModel)]="busqueda" placeholder="Escribe un modelo o descripción">
+  <h2>Catálogo de Autos</h2>
 
-<!-- Filtro por marca -->
-<label for="marca">Filtrar por marca:</label>
-<select title="Selecciona una marca" [(ngModel)]="marcaSeleccionada">
-  <option value="">Todas</option>
-  <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
-</select>
+  <!-- Botón para agregar producto -->
+  <button class="btn-agregar" (click)="agregarProducto()">Agregar Producto</button>
 
-<div class="catalogo">
-  <div *ngFor="let auto of autosFiltrados()" class="auto-card">
-    <img [src]="auto.imagen" [alt]="'Imagen de ' + auto.marca + ' ' + auto.modelo" title="'Imagen de ' + auto.marca + ' ' + auto.modelo">
-    <h3>{{ auto.marca }} {{ auto.modelo }}</h3>
-    <p>{{ auto.descripcion }}</p>
-    <button (click)="mostrarDetalles(auto)">Ver más</button>
+  <!-- Barra de búsqueda -->
+  <label for="busqueda">Buscar auto:</label>
+  <input type="text" id="busqueda" [(ngModel)]="busqueda" placeholder="Escribe un modelo o descripción">
+
+  <!-- Filtro por marca -->
+  <label for="marca">Filtrar por marca:</label>
+  <select id="marca" title="Selecciona una marca" [(ngModel)]="marcaSeleccionada">
+    <option value="">Todas</option>
+    <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
+  </select>
+
+  <div class="catalogo">
+    <div *ngFor="let auto of autosFiltrados()" class="auto-card">
+      <img [src]="auto.imagen" [alt]="'Imagen de ' + auto.marca + ' ' + auto.modelo" [title]="'Imagen de ' + auto.marca + ' ' + auto.modelo">
+      <h3>{{ auto.marca }} {{ auto.modelo }}</h3>
+      <p>{{ auto.descripcion }}</p>
+      
+      <button class="btn-ver" (click)="verDetalles(auto)">Ver más</button>
+    </div>
   </div>
-</div>
-
-<!-- Detalles del auto seleccionado -->
-<div *ngIf="autoSeleccionado" class="detalle-auto">
-  <h3>Detalles de {{ autoSeleccionado.marca }} {{ autoSeleccionado.modelo }}</h3>
-  <p><strong>Descripción:</strong> {{ autoSeleccionado.descripcion }}</p>
-  <p><strong>Fabricante:</strong> {{ autoSeleccionado.fabricante }}</p>
-  <p><strong>Año de fabricación:</strong> {{ autoSeleccionado.anio }}</p>
-  <button (click)="cerrarDetalles()">Cerrar</button>
 </div>

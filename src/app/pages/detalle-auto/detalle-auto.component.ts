@@ -1,19 +1,27 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Add these imports
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-catalogo-autos',
-  templateUrl: './catalogo-autos.component.html',
-  styleUrls: ['./catalogo-autos.component.css'],
+  selector: 'app-detalle-auto',
+  templateUrl: './detalle-auto.component.html',
+  styleUrls: ['./detalle-auto.component.css'],
   standalone: false
 })
-export class CatalogoAutosComponent {
-  constructor(private router: Router) { }
-  marcaSeleccionada: string = '';
-  busqueda: string = '';
-  autoSeleccionado: any = null;
+export class DetalleAutoComponent implements OnInit {
+  autoForm!: FormGroup;
 
-  marcas: string[] = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan', 'Mazda', 'BMW', 'Mercedes-Benz', 'Audi', 'Volkswagen', 'Hyundai', 'Kia', 'Subaru', 'Tesla', 'Porsche', 'Jaguar', 'Lexus', 'Ferrari', 'Lamborghini', 'Mitsubishi', 'Peugeot', 'Renault', 'Alfa Romeo', 'Dodge', 'Chrysler', 'Volvo', 'Jeep', 'Cadillac', 'Buick', 'GMC', 'Infiniti', 'Acura', 'Mini', 'Genesis'];
+  constructor(private fb: FormBuilder, private router: Router) { } // Inject Router
+
+  ngOnInit(): void {
+    this.autoForm = this.fb.group({
+      marca: ['', Validators.required],
+      modelo: ['', Validators.required],
+      año: ['', [Validators.required, Validators.min(1886)]],
+      color: ['', Validators.required],
+      precio: ['', [Validators.required, Validators.min(0)]]
+    });
+  }
 
   autos = [
     { id: 1, marca: 'Toyota', modelo: 'Corolla', descripcion: 'Sedán confiable.', imagen: 'https://th.bing.com/th?id=OIP.wk63r5deyAi_ZfLz-71hGgHaEb&w=269&h=200&c=12&rs=1&p=0&o=6&pid=23.1', fabricante: 'Toyota Motor Corporation', anio: 2022 },
@@ -31,25 +39,14 @@ export class CatalogoAutosComponent {
     { id: 13, marca: 'Subaru', modelo: 'Forester', descripcion: 'Aventurero y resistente.', imagen: 'https://th.bing.com/th/id/OIP.FPCT63vNR907b30fjem9LgHaFC?w=200&h=180&c=7&r=0&o=5&pid=1.7', fabricante: 'Subaru Corporation', anio: 2021 },
     { id: 14, marca: 'Tesla', modelo: 'Model 3', descripcion: 'Eléctrico y futurista.', imagen: 'https://th.bing.com/th/id/OIP.6lE1YJgeeRtmjoez72IZUgHaEK?w=307&h=180&c=7&r=0&o=5&pid=1.7', fabricante: 'Tesla, Inc.', anio: 2023 },
     { id: 15, marca: 'Porsche', modelo: '911', descripcion: 'Deportivo icónico.', imagen: 'https://th.bing.com/th/id/OIP.UNHaLeHU_iLe48wuCMzd-gHaEK?w=281&h=180&c=7&r=0&o=5&pid=1.7', fabricante: 'Porsche AG', anio: 2022 },
-
   ];
 
-  // Filtrar autos según la búsqueda y la marca seleccionada
-  autosFiltrados() {
-    return this.autos.filter(auto =>
-      (this.marcaSeleccionada === '' || auto.marca === this.marcaSeleccionada) &&
-      (this.busqueda === '' || auto.modelo.toLowerCase().includes(this.busqueda.toLowerCase()) || auto.descripcion.toLowerCase().includes(this.busqueda.toLowerCase()))
-    );
+  regresar() {
+    this.router.navigate(['/']);
   }
-
-  // Mostrar detalles del auto seleccionado
-  verDetalles(auto: any) {
-    this.router.navigate(['/detalle-auto', auto.id]);
-  }
-
-  // Agregar un nuevo auto
-  agregarProducto() {
-    alert('Funcionalidad de agregar un nuevo auto aún no implementada');
+  guardarAuto() {
+    if (this.autoForm.valid) {
+      console.log('Auto guardado', this.autoForm.value);
+    }
   }
 }
-
