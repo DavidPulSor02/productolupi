@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CatalogoAutosComponent } from './pages/catalogo-autos/catalogo-autos.component';
 import { DetalleAutoComponent } from './pages/detalle-auto/detalle-auto.component';
+import { RegisterPageComponent } from './auth/pages/register-page/register-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'catalogo-autos', component: CatalogoAutosComponent},
   { path: 'detalle-auto/:id', component: DetalleAutoComponent},
+  { path: 'register', component: RegisterPageComponent },
 
   // Manejo de página no encontrada (404)
   { path: '**', redirectTo: 'home' }
